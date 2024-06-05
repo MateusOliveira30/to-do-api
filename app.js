@@ -4,6 +4,7 @@ import bodyParser from 'body-parser'
 import getRoute from './Routes/SeeAllTasksRoute/getRoute.js'
 import postRoute from './Routes/CreateTaskRoute/postRoute.js'
 import deleteRoute from './Routes/DeleteTaskRoute/deleteRoute.js'
+import putRoute from './Routes/UpdateTask/putRoute.js'
 
 const app = express()
 
@@ -15,6 +16,7 @@ app.use(bodyParser.json())
 app.use(baseRoute + '/', getRoute)
 app.use(baseRoute + '/create-task', postRoute)
 app.use(baseRoute, deleteRoute)
+app.use(baseRoute, putRoute)
 
 
 
